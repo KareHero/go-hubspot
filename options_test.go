@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/KareHero/go-hubspot"
 	"github.com/google/go-cmp/cmp"
+	"github.com/kareHero/go-hubspot"
 )
 
 func TestWithAPIVersion(t *testing.T) {

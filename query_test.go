@@ -3,8 +3,8 @@ package hubspot_test
 import (
 	"testing"
 
-	"github.com/KareHero/go-hubspot"
 	"github.com/google/go-cmp/cmp"
+	"github.com/kareHero/go-hubspot"
 )
 
 func TestRequestQueryOption_setupProperties(t *testing.T) {

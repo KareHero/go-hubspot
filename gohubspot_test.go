@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	hubspot "github.com/KareHero/go-hubspot"
 	"github.com/google/go-cmp/cmp"
+	hubspot "github.com/kareHero/go-hubspot"
 )
 
 var (

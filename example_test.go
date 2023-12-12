@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	hubspot "github.com/KareHero/go-hubspot"
+	hubspot "github.com/kareHero/go-hubspot"
 )
 
 type ExampleContact struct {

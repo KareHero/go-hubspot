@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/KareHero/go-hubspot"
 	"github.com/google/go-cmp/cmp"
+	"github.com/kareHero/go-hubspot"
 )
 
 func TestHsStr_String(t *testing.T) {

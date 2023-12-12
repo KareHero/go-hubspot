@@ -1,4 +1,4 @@
-module github.com/KareHero/go-hubspot/tools
+module github.com/kareHero/go-hubspot/tools
 
 go 1.20
 
