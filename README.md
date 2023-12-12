@@ -1,5 +1,6 @@
 # go-hubspot
-[![godoc](https://godoc.org/github.com/belong-inc/go-hubspot?status.svg)](https://pkg.go.dev/github.com/belong-inc/go-hubspot)
+
+[![godoc](https://godoc.org/github.com/KareHero/go-hubspot?status.svg)](https://pkg.go.dev/github.com/KareHero/go-hubspot)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 HubSpot Go Library that works with [HubSpot API v3](https://developers.hubspot.com/docs/api/overview).  
@@ -11,7 +12,7 @@ production.
 # Install
 
 ```shell
-$ go get github.com/belong-inc/go-hubspot
+$ go get github.com/KareHero/go-hubspot
 ```
 
 # Usage
@@ -128,7 +129,8 @@ client.CRM.Contact.AssociateAnotherObj("yourContactID", &hubspot.AssociationConf
 
 Custom fields are added out of existing object such as Deal or Contact.  
 Therefore a new struct needs to be created which contain default fields and additional custom field, and set to Properties field of a request.
-Before using custom  field through API, the field needs to be set up in HubSpot web site.
+Before using custom field through API, the field needs to be set up in HubSpot web site.
+
 ### Get deal with custom fields.
 
 ```go
@@ -202,7 +204,7 @@ fmt.Println(customDeal.CustomA, customDeal.CustomB)
 # API availability
 
 | Category      | API                 | Availability    |
-|---------------|---------------------|-----------------|
+| ------------- | ------------------- | --------------- |
 | CRM           | Deal                | Available       |
 | CRM           | Company             | Available       |
 | CRM           | Contact             | Available       |
@@ -222,7 +224,7 @@ fmt.Println(customDeal.CustomA, customDeal.CustomB)
 # Authentication availability
 
 | Type         | Availability |
-|--------------|--------------|
+| ------------ | ------------ |
 | API key      | Deprecated   |
 | OAuth        | Available    |
 | Private apps | Available    |

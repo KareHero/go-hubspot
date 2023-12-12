@@ -4,8 +4,8 @@ First off, thank you for considering contributing to go-hubspot.
 
 ## Reporting bug & Feature request
 
-If you've noticed a bug or have a feature request, please make an [issue](https://github.com/belong-inc/go-hubspot/issues).  
-Some issue contents are being or have been fixed, so it is recommended to check for similar issues.  
+If you've noticed a bug or have a feature request, please make an [issue](https://github.com/KareHero/go-hubspot/issues).  
+Some issue contents are being or have been fixed, so it is recommended to check for similar issues.
 
 ## Code change flow
 
@@ -13,7 +13,7 @@ If the bug or feature request is something you think you can fix by yourself, pl
 
 ### Fork & create a branch
 
-Fork repository and create branch with a descriptive name.  
+Fork repository and create branch with a descriptive name.
 
 ### Implement fix or feature & run lint and test
 
@@ -30,19 +30,22 @@ When you have finished modifying and testing the code, please create a pull requ
 
 When creating a pull request, we ask for the following items to be included. The items are described in the template.
 
-- What to do  
+- What to do
+
   - Please describe the purpose and what changes of this pull request.
   - If you have any reference links, please include them.
 
-- Background  
+- Background
+
   - Please describe why you need to make this modification.
 
-- Acceptance criteria  
+- Acceptance criteria
   - Please describe what can be considered complete.
 
 ### Merging a pull request (maintainer only)
 
 A PR can only be merged into main by a maintainer if:
+
 - It is passing CI.
 - It has been approved by maintainers.
 - It has no requested changes.
