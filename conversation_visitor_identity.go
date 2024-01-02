@@ -4,10 +4,6 @@ const (
 	visitorIdentificationBasePath = "/conversations/v3/visitor-identification"
 )
 
-type VisitorIdentificationServiceOp struct {
-	client *Client
-}
-
 type IdentificationTokenResponse struct {
 	Token string `json:"token"`
 }
@@ -22,6 +18,10 @@ type VisitorIdentificationService interface {
 	GenerateIdentificationToken(request IdentificationTokenRequest) (*IdentificationTokenResponse, error)
 }
 
+type VisitorIdentificationServiceOp struct {
+	client *Client
+}
+
 func (s *VisitorIdentificationServiceOp) GenerateIdentificationToken(request IdentificationTokenRequest) (*IdentificationTokenResponse, error) {
 	response := &IdentificationTokenResponse{}
 	path := visitorIdentificationBasePath + "/tokens/create"
@@ -30,3 +30,6 @@ func (s *VisitorIdentificationServiceOp) GenerateIdentificationToken(request Ide
 	}
 	return response, nil
 }
+
+// Embed the VisitorIdentificationService interface in VisitorIdentificationServiceOp
+var _ VisitorIdentificationService = &VisitorIdentificationServiceOp{}
