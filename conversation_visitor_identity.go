@@ -15,21 +15,20 @@ type IdentificationTokenRequest struct {
 }
 
 type VisitorIdentificationService interface {
-	GenerateIdentificationToken(request *IdentificationTokenRequest) (*IdentificationTokenResponse, error)
+	GenerateIdentificationToken(option *IdentificationTokenRequest) (*IdentificationTokenResponse, error)
 }
 
 type VisitorIdentificationServiceOp struct {
 	client *Client
 }
 
-func (s *VisitorIdentificationServiceOp) GenerateIdentificationToken(request *IdentificationTokenRequest) (*IdentificationTokenResponse, error) {
+var _ VisitorIdentificationService = (*VisitorIdentificationServiceOp)(nil)
+
+func (s *VisitorIdentificationServiceOp) GenerateIdentificationToken(option *IdentificationTokenRequest) (*IdentificationTokenResponse, error) {
 	response := &IdentificationTokenResponse{}
 	path := visitorIdentificationBasePath + "/tokens/create"
-	if err := s.client.Post(path, request, response); err != nil {
+	if err := s.client.Post(path, option, response); err != nil {
 		return nil, err
 	}
 	return response, nil
 }
-
-// Embed the VisitorIdentificationService interface in VisitorIdentificationServiceOp
-var _ VisitorIdentificationService = &VisitorIdentificationServiceOp{}
