@@ -24,7 +24,7 @@ type VisitorIdentificationServiceOp struct {
 	client *Client
 }
 
-var _ VisitorIdentificationService = (VisitorIdentificationServiceOp)(nil)
+var _ VisitorIdentificationService = (*VisitorIdentificationServiceOp)(nil)
 
 func (s *VisitorIdentificationServiceOp) GenerateIdentificationToken(option IdentificationTokenRequest) (*IdentificationTokenResponse, error) {
 	fmt.Println("GenerateIdentificationToken")
