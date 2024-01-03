@@ -1,7 +1,8 @@
 package hubspot
 
 type Conversation struct {
-	VisitorIdentification VisitorIdentificationService
+	VisitorIdentification      VisitorIdentificationService
+	IdentificationTokenRequest IdentificationTokenRequest
 }
 
 func newConversation(c *Client) *Conversation {
