@@ -11,9 +11,9 @@ type IdentificationTokenResponse struct {
 }
 
 type IdentificationTokenRequest struct {
-	FirstName string
-	LastName  string
-	Email     string
+	FirstName string `json:"firstname"`
+	LastName  string `json:"lastname"`
+	Email     string `json:"email"`
 }
 
 type VisitorIdentificationService interface {
@@ -30,6 +30,15 @@ func (s *VisitorIdentificationServiceOp) GenerateIdentificationToken(option Iden
 	fmt.Println("GenerateIdentificationToken")
 	fmt.Println("options", option)
 	fmt.Printf("----> options %+v\n", option)
+
+	// but api endpoiunt requires options.FirstName, options.LastName, options.Email to be in this format
+	// {
+	// "email": "test@hubspot",
+	// "firstname": "test",
+	// "lastname": "test"
+	// }
+	// so we need to convert it
+
 	response := &IdentificationTokenResponse{}
 	path := visitorIdentificationBasePath + "/tokens/create"
 	if err := s.client.Post(path, option, response); err != nil {
