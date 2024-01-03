@@ -9,13 +9,39 @@ type IdentificationTokenResponse struct {
 }
 
 type IdentificationTokenRequest struct {
-	FirstName string
-	LastName  string
-	Email     string
+	firstName string
+	lastName  string
+	email     string
+}
+
+// Getter methods
+func (r *IdentificationTokenRequest) FirstName() string {
+	return r.firstName
+}
+
+func (r *IdentificationTokenRequest) LastName() string {
+	return r.lastName
+}
+
+func (r *IdentificationTokenRequest) Email() string {
+	return r.email
+}
+
+// Setter methods
+func (r *IdentificationTokenRequest) SetFirstName(firstName string) {
+	r.firstName = firstName
+}
+
+func (r *IdentificationTokenRequest) SetLastName(lastName string) {
+	r.lastName = lastName
+}
+
+func (r *IdentificationTokenRequest) SetEmail(email string) {
+	r.email = email
 }
 
 type VisitorIdentificationService interface {
-	GenerateIdentificationToken(option *IdentificationTokenRequest) (*IdentificationTokenResponse, error)
+	GenerateIdentificationToken(request *IdentificationTokenRequest) (*IdentificationTokenResponse, error)
 }
 
 type VisitorIdentificationServiceOp struct {
@@ -24,10 +50,10 @@ type VisitorIdentificationServiceOp struct {
 
 var _ VisitorIdentificationService = (*VisitorIdentificationServiceOp)(nil)
 
-func (s *VisitorIdentificationServiceOp) GenerateIdentificationToken(option *IdentificationTokenRequest) (*IdentificationTokenResponse, error) {
+func (s *VisitorIdentificationServiceOp) GenerateIdentificationToken(request *IdentificationTokenRequest) (*IdentificationTokenResponse, error) {
 	response := &IdentificationTokenResponse{}
 	path := visitorIdentificationBasePath + "/tokens/create"
-	if err := s.client.Post(path, option, response); err != nil {
+	if err := s.client.Post(path, request, response); err != nil {
 		return nil, err
 	}
 	return response, nil
